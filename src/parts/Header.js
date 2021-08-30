@@ -1,5 +1,5 @@
 import React from "react";
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 import Button from "elements/Button";
 import BrandIcon from "parts/IconText";
 
@@ -9,7 +9,7 @@ export default function Header(props) {
   };
 
   return (
-    <Fade>
+    <Fade direction={"up"}>
       <header className="spacing-sm">
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light">
