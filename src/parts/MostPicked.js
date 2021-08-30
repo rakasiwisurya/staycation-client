@@ -10,6 +10,7 @@ export default function MostPicked(props) {
           return (
             <div
               className={`item column-4${index === 0 ? " row-2" : " row-1"}`}
+              key={`mostPicked-index${index}`}
             >
               <div className="card card-featured">
                 <div className="tag">
