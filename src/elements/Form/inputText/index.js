@@ -63,7 +63,7 @@ export default function Text(props) {
           </div>
         )}
       </div>
-      {HasError && <span className="error-help">{HasError}</span>}
+      {HasError && <span className="error-helper">{HasError}</span>}
     </div>
   );
 }

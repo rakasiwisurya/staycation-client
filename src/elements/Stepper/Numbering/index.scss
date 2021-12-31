@@ -1,6 +1,6 @@
 @import "../../../assets/scss/colorVariables";
 
-$stepperMainColor: $gray-200;
+$stepperMainColor: $gray-300;
 $size: 50px;
 
 ol.stepper {
@@ -19,7 +19,7 @@ ol.stepper {
     width: $size;
     height: $size;
     border-radius: $size;
-    color: $white;
+    color: $gray-500;
 
     &:after {
       position: absolute;
@@ -54,12 +54,11 @@ ol.stepper {
     &.active {
       &:after {
         z-index: -1;
-        border: 1px solid $stepperMainColor;
+        background: $stepperMainColor;
+        border: 4px solid $white;
+        outline: 2px solid $stepperMainColor;
         transform: scale(1.2);
       }
-
-      background-color: $stepperMainColor;
-      color: $gray-500;
 
       &~li {
         color: $gray-500;

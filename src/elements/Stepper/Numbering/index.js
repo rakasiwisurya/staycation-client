@@ -5,19 +5,17 @@ import "./index.scss";
 
 export default function Numbering({ style, className, data, current }) {
   const KeysOfData = Object.keys(data);
+  KeysOfData.pop();
 
   return (
     <Fade>
       <ol className={["stepper", className].join(" ")} style={style}>
         {KeysOfData.map((list, index) => {
           let isActive = list === current ? "active" : "";
-          if (index + 1 === KeysOfData.length) {
-            isActive = "";
-          }
 
           return (
             <li key={`list-${index}`} className={[isActive].join(" ")}>
-              {isActive ? null : index + 1}
+              {index + 1}
             </li>
           );
         })}

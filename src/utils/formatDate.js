@@ -1,4 +1,4 @@
-export default (date) => {
+export default function formatDate(date) {
   const d = new Date(date);
   const dtf = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
@@ -9,4 +9,4 @@ export default (date) => {
   const [{ value: mo }, , { value: da }] = dtf.formatToParts(d);
 
   return `${da} ${mo}`;
-};
+}

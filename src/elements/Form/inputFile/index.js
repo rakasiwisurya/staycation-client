@@ -25,7 +25,7 @@ export default function File(props) {
           </div>
         )}
         <input
-          accept="{accept}"
+          accept={accept}
           ref={refInputFile}
           name={name}
           className="d-none"
