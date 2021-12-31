@@ -1,0 +1,74 @@
+@import "../../../assets/scss/colorVariables";
+
+$stepperMainColor: $gray-200;
+$size: 50px;
+
+ol.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    width: $size;
+    height: $size;
+    border-radius: $size;
+    color: $white;
+
+    &:after {
+      position: absolute;
+      content: "";
+      z-index: 2;
+      width: $size;
+      height: $size;
+      border-radius: $size;
+      background-image: url('data: image/svg+xml;utf8,<svg width="33" height="25" viewBox="0 0 33 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 14L10.4968 22.072C11.3181 22.8522 12.6228 22.7952 13.373 21.9464L31 2" stroke="white" stroke-width="4" stroke-linecap="round"/></svg>');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: $teal;
+      transform: scale(1);
+      transition: .35s transform ease-in-out;
+    }
+
+    &:not(:last-child) {
+      margin-right: 60px;
+
+      &:before {
+        content: "";
+        z-index: -2;
+        top: 50%;
+        left: 100%;
+        position: absolute;
+        width: $size + 10;
+        height: 1px;
+        background-color: $stepperMainColor;
+      }
+    }
+
+    &.active {
+      &:after {
+        z-index: -1;
+        border: 1px solid $stepperMainColor;
+        transform: scale(1.2);
+      }
+
+      background-color: $stepperMainColor;
+      color: $gray-500;
+
+      &~li {
+        color: $gray-500;
+        background: $stepperMainColor;
+
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+}

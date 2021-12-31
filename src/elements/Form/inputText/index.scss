@@ -1,0 +1,50 @@
+@import "../../../assets/scss/colorVariables";
+
+.input-text {
+  margin-bottom: 20px;
+  position: relative;
+
+  .input-group {
+    background-color: $white;
+
+    .input-group-text {
+      pointer-events: none;
+      border: 0;
+      cursor: auto;
+      padding: 0;
+      border-radius: 4px !important;
+      font-size: 24px;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      background-color: $gray-900;
+      position: absolute;
+      z-index: 999;
+    }
+
+    input.form-control {
+      border: 0;
+      border-radius: 4px;
+      outline: 0;
+      box-shadow: none;
+      background-color: $gray-200;
+      padding: 0.575rem 1rem;
+      width: 100%;
+      height: 45px;
+
+      &::placeholder {
+        color: $gray-400;
+      }
+    }
+  }
+
+  .error-helper {
+    position: absolute;
+    top: 45px;
+    background-color: $red;
+    color: $white;
+    padding: 0 2px;
+    font-size: 0.675rem;
+  }
+}

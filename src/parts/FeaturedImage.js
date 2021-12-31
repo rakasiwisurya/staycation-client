@@ -4,25 +4,18 @@ import { Fade } from "react-awesome-reveal";
 export default function FeaturedImage({ data }) {
   return (
     <section className="container">
-      <div className="container-grid sm">
-        {data.map((item, index) => {
-          return (
-            <div
-              key={`FeaturedImage-${index}`}
-              className={`item ${index > 0 ? "column-5" : "column-7"} ${
-                index > 0 ? "row-1" : "row-2"
-              }`}
-            >
-              <Fade direction="up" delay={300 * index}>
-                <div className="card h-100">
-                  <figure className="img-wrapper">
-                    <img src={item.url} alt={item._id} className="img-cover" />
-                  </figure>
-                </div>
-              </Fade>
-            </div>
-          );
-        })}
+      <div className="row">
+        <div className="col-7">
+          <img src={data[0].url} alt={data[0]._id} className="img-cover" />
+        </div>
+        <div className="col-5">
+          <div className="row mb-3">
+            <img src={data[1].url} alt={data[1]._id} className="img-cover" />
+          </div>
+          <div className="row">
+            <img src={data[2].url} alt={data[2]._id} className="img-cover" />
+          </div>
+        </div>
       </div>
     </section>
   );

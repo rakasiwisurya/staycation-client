@@ -63,12 +63,18 @@ export default function Footer() {
                   isExternal
                   type="link"
                   href="mailto:support@staycation.co.id"
+                  target="_blank"
                 >
                   support@staycation.co.id
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button isExternal type="link" href="tel:+6222081997">
+                <Button
+                  isExternal
+                  type="link"
+                  href="tel:+6222081997"
+                  target="_blank"
+                >
                   021 - 2208 - 1997
                 </Button>
               </li>
