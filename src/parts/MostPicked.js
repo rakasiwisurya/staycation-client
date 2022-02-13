@@ -9,6 +9,7 @@ export default function MostPicked(props) {
         <h4 className="mb-3">Most Picked</h4>
         <div className="container-grid">
           {props.data.map((item, index) => {
+            console.log(item);
             return (
               <Fade
                 direction={"up"}
@@ -24,7 +25,7 @@ export default function MostPicked(props) {
                   <figure className="img-wrapper">
                     <img
                       src={item.imageId[0].imageUrl}
-                      alt={item.imageId[0].imageUrl}
+                      alt={item.title}
                       className="img-cover"
                     />
                   </figure>
@@ -34,7 +35,7 @@ export default function MostPicked(props) {
                       className="stretched-link d-block text-white"
                       href={`properties/${item._id}`}
                     >
-                      <h5>{item.name}</h5>
+                      <h5>{item.title}</h5>
                     </Button>
                     <span>
                       {item.city}, {item.country}
