@@ -1,12 +1,16 @@
 import React from "react";
-import "assets/scss/style.scss";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+
 import LandingPage from "pages/LandingPage";
 import DetailsPage from "pages/DetailsPage";
 import Checkout from "pages/Checkout";
 import Example1 from "pages/ExampleInputNumber";
 import Example2 from "pages/ExampleInputDate";
 import Example3 from "pages/ExampleBreadcrumb";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import "react-toastify/dist/ReactToastify.css";
+import "assets/scss/style.scss";
 
 function App() {
   return (
@@ -19,6 +23,7 @@ function App() {
         <Route path="/example2" component={Example2} />
         <Route path="/example3" component={Example3} />
       </Router>
+      <ToastContainer />
     </div>
   );
 }

@@ -63,6 +63,11 @@ export default function Text(props) {
           </div>
         )}
       </div>
+      {name === "bankName" && (
+        <div className="text-gray-500 mb-3" style={{ fontSize: 12 }}>
+          e.g. BCA or Mandiri
+        </div>
+      )}
       {HasError && <span className="error-helper">{HasError}</span>}
     </div>
   );

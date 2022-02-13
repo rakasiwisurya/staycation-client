@@ -21,10 +21,7 @@ class LandingPage extends Component {
     window.scrollTo(0, 0);
 
     if (!this.props.page.landingPage) {
-      this.props.fetchPage(
-        `${process.env.REACT_APP_HOST}/landing-page`,
-        "landingPage"
-      );
+      this.props.fetchPage(`/landing-page`, "landingPage");
     }
   }
 
