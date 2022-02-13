@@ -15,8 +15,6 @@ export default class Example2 extends Component {
   };
 
   render() {
-    const { value } = this.state;
-    console.log(value.endDate);
     return (
       <div className="container">
         <div
