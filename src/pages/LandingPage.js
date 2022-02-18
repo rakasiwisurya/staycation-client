@@ -7,6 +7,7 @@ import MostPicked from "parts/MostPicked";
 import Categories from "parts/Categories";
 import Testimony from "parts/Testimony";
 import Footer from "parts/Footer";
+import Loading from "elements/Loading";
 
 import { fetchPage } from "store/actions/page";
 
@@ -17,7 +18,7 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-    window.title = "Staycation | Home";
+    window.document.title = "Staycation | Home";
     window.scrollTo(0, 0);
 
     if (!this.props.page.landingPage) {
@@ -28,7 +29,7 @@ class LandingPage extends Component {
   render() {
     const { page } = this.props;
 
-    if (!page.hasOwnProperty("landingPage")) return null;
+    if (!page.hasOwnProperty("landingPage")) return <Loading />;
 
     return (
       <>

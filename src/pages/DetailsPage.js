@@ -10,6 +10,7 @@ import BookingForm from "parts/BookingForm";
 import Activities from "parts/Activities";
 import Testimony from "parts/Testimony";
 import Footer from "parts/Footer";
+import Loading from "elements/Loading";
 
 // import ItemDetails from "json/itemDetails.json";
 
@@ -18,7 +19,7 @@ import { fetchPage } from "store/actions/page";
 
 class DetailsPage extends Component {
   componentDidMount() {
-    window.title = "Details Page";
+    window.document.title = "Details Page";
     window.scrollTo(0, 0);
 
     if (!this.props.page[this.props.match.params.id]) {
@@ -32,7 +33,7 @@ class DetailsPage extends Component {
   render() {
     const { page, match } = this.props;
 
-    if (!page[match.params.id]) return null;
+    if (!page[match.params.id]) return <Loading />;
 
     const breadcrumb = [
       { pageTitle: "Home", pageHref: "" },
