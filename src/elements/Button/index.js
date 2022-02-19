@@ -18,15 +18,16 @@ export default function Button(props) {
   if (props.isDisabled || props.isLoading) {
     if (props.isDisabled) className.push("disabled");
     return (
-      <button className={className.join(" ")} style={props.style}>
+      <span className={className.join(" ")} style={props.style}>
         {props.isLoading ? (
-          <div className="spinner-border spinner-border-sm mx-5">
+          <>
+            <span className="spinner-border spinner-border-sm mx-5"></span>
             <span className="sr-only">Loading...</span>
-          </div>
+          </>
         ) : (
           props.children
         )}
-      </button>
+      </span>
     );
   }
 

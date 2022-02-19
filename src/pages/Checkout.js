@@ -197,10 +197,15 @@ class Checkout extends Component {
                           isPrimary
                           hasShadow
                           onClick={() => this._submit(nextStep)}
-                          isLoading={isLoading}
-                          isDisabled={isLoading}
                         >
-                          Book
+                          {isLoading ? (
+                            <div
+                              className="spinner-border text-light"
+                              role="status"
+                            ></div>
+                          ) : (
+                            "Book"
+                          )}
                         </Button>
                       </Fade>
                     )}
