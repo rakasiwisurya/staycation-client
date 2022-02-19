@@ -10,15 +10,14 @@ export default function Categories({ data }) {
       <section className="container" key={`category-index${index1}`}>
         <Fade direction={"up"}>
           <h4 className="mb-3 font-weight-medium">{category.name}</h4>
-
-          <div className="row">
+          <div className="container-grid">
             {category.itemId.map((item, index2) => (
               <div
-                className="col-md-3 col-sm-12"
+                className="item column-3 row-1"
                 key={`category-${index1}-item-${index2}`}
               >
                 <Fade direction={"up"} delay={300 * index2}>
-                  <div className="card mb-3 mb-md-0">
+                  <div className="card">
                     {item.isPopular && (
                       <div className="tag">
                         Popular{" "}

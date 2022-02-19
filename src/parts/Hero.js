@@ -20,7 +20,7 @@ export default function Hero(props) {
     <Fade direction={"up"}>
       <section className="container pt-4">
         <div className="row align-items-center">
-          <div className="col-lg-auto col-sm-12" style={{ width: 553 }}>
+          <div className="col-auto pr-5" style={{ width: 553 }}>
             <h1 className="font-weight-bold line-height-1 mb-3">
               Forget busy work, <br />
               start next vacation
@@ -41,11 +41,8 @@ export default function Hero(props) {
               Show Me
             </Button>
 
-            <div
-              className="row row-cols-3"
-              style={{ marginTop: 80, marginBottom: 50 }}
-            >
-              <div className="col-md-auto text-truncate">
+            <div className="row" style={{ marginTop: 80 }}>
+              <div className="col-auto" style={{ marginRight: 35 }}>
                 <img
                   width="36"
                   height="36"
@@ -60,7 +57,7 @@ export default function Hero(props) {
                 </h6>
               </div>
 
-              <div className="col-md-auto text-truncate">
+              <div className="col-auto" style={{ marginRight: 35 }}>
                 <img
                   width="36"
                   height="36"
@@ -75,7 +72,7 @@ export default function Hero(props) {
                 </h6>
               </div>
 
-              <div className="col-md-auto text-truncate">
+              <div className="col-auto" style={{ marginRight: 35 }}>
                 <img
                   width="36"
                   height="36"
@@ -92,7 +89,7 @@ export default function Hero(props) {
             </div>
           </div>
 
-          <div className="col-lg-6 d-none d-lg-block">
+          <div className="col-6 pl-5">
             <div style={{ width: 520, height: 410 }}>
               <img
                 src={ImageHero}

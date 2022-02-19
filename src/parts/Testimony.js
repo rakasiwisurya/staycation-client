@@ -9,10 +9,7 @@ export default function Testimony({ data }) {
     <Fade direction={"up"}>
       <section className="container">
         <div className="row align-items-center">
-          <div
-            className="col-auto d-none d-md-block"
-            style={{ marginRight: 60 }}
-          >
+          <div className="col-auto" style={{ marginRight: 60 }}>
             <div
               className="testimonial-hero"
               style={{ margin: `30px 0 0 30px` }}

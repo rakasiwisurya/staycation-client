@@ -30,20 +30,7 @@ export default function Header(props) {
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container">
             <BrandIcon />
-
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-
-            <div className="navbar-collapse collapse" id="navbarNav">
+            <div className="collapse navbar-collapse">
               <ul className="navbar-nav ml-auto">
                 <li className={`nav-item${getNavLinkClass("/")}`}>
                   <Button className="nav-link" type="link" href="/">
