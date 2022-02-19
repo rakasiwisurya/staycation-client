@@ -14,7 +14,7 @@ export default function Header(props) {
         <header className="spacing-sm">
           <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light">
-              <Button className="brand-text-icon mx-auto" href="" type="link">
+              <Button className="brand-text-icon mx-auto" href="/" type="link">
                 Stay<span className="text-gray-900">cation.</span>
               </Button>
             </nav>
@@ -30,7 +30,20 @@ export default function Header(props) {
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container">
             <BrandIcon />
-            <div className="collapse navbar-collapse">
+
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+
+            <div className="navbar-collapse collapse" id="navbarNav">
               <ul className="navbar-nav ml-auto">
                 <li className={`nav-item${getNavLinkClass("/")}`}>
                   <Button className="nav-link" type="link" href="/">
