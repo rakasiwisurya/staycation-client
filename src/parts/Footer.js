@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container">
         <div className="row">
           <div
-            className="col-md-3 col-lg-4 col-sm-12 pr-5"
+            className="col-sm-12 col-md-12 col-lg pr-lg-5 text-center text-lg-left"
             // style={{ width: 350 }}
           >
             <IconText />
@@ -16,7 +16,7 @@ export default function Footer() {
               We kaboom your beauty holiday instantly and memorable
             </p>
           </div>
-          <div className="col-md-auto col-sm-12 pr-xl-5 mb-3 mb-md-0">
+          <div className="col-sm-12 col-md-4 col-lg-auto mr-xl-5 mb-3 mb-md-0 text-center text-md-left">
             <h6 className="mt-2">For Beginners</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
@@ -37,7 +37,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-md-2 col-sm-12 pr-xl-5 mb-3 mb-md-0">
+          <div className="col-sm-12 col-md-4 col-lg-auto mr-xl-4 mb-3 mb-md-0 text-center text-md-left">
             <h6 className="mt-2">Explore Us</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
@@ -58,7 +58,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-md-3 col-sm-12">
+          <div className="col-sm-12 col-md-4 col-lg-auto text-center text-md-left">
             <h6 className="mt-2">Connect Us</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
