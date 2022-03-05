@@ -8,9 +8,12 @@ export default function Activities({ data }) {
     <section className="container">
       <Fade direction={"up"}>
         <h4 className="mb-3 font-weight-medium">Activities</h4>
-        <div className="container-grid">
+        <div className="row">
           {data.map((item, index) => (
-            <div className="item column-3 row-1" key={`activity${index}`}>
+            <div
+              className="col-md-3 col-sm-12 mb-3 mb-md-0"
+              key={`activity${index}`}
+            >
               <Fade direction={"up"} delay={300 * index}>
                 <div className="card">
                   {item.isPopular && (

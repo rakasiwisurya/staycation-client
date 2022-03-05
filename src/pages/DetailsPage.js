@@ -47,12 +47,12 @@ class DetailsPage extends Component {
         <FeaturedImage data={page[match.params.id].imageId} />
         <section className="container">
           <div className="row">
-            <div className="col-7 pr-5">
+            <div className="col-md-7 col-sm-12 pr-md-5">
               <Fade direction="up">
                 <PageDetailDescription data={page[match.params.id]} />
               </Fade>
             </div>
-            <div className="col-5">
+            <div className="col-md-5 col-sm-12">
               <Fade direction="up">
                 <BookingForm
                   itemDetails={page[match.params.id]}

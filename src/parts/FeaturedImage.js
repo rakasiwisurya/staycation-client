@@ -6,14 +6,17 @@ export default function FeaturedImage({ data }) {
     <section className="container">
       <Fade direction={"up"}>
         <div className="row">
-          <div className="col-7" style={{ height: 582 }}>
+          <div
+            className="col-md-7 col-sm-12 mb-3 mb-md-0"
+            style={{ height: 582 }}
+          >
             <img
               src={data[0].imageUrl}
               alt={data[0]._id}
               className="img-cover"
             />
           </div>
-          <div className="col-5">
+          <div className="col-md-5 mx-3 mx-md-0">
             <div className="row mb-3" style={{ height: 283 }}>
               <img
                 src={data[1].imageUrl}
