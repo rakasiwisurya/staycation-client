@@ -7,7 +7,7 @@ export default function Completed() {
     <Fade>
       <div className="container" style={{ marginBottom: 30 }}>
         <div className="row justify-content-center text-center">
-          <div className="col-4">
+          <div className="col-md-4 col-sm-12">
             <img
               src={CompletedIllustration}
               className="img-fluid"
