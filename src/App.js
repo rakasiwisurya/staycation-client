@@ -1,5 +1,4 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import LandingPage from "pages/LandingPage";
@@ -14,12 +13,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/properties/:id" component={DetailsPage} />
-          <Route path="/checkout" component={Checkout} />
-          <Route component={NotFound} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/properties/:id" element={<DetailsPage />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </Router>
       <ToastContainer />
     </div>

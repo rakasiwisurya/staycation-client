@@ -1,11 +1,12 @@
 import React from "react";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
+import getImageUrl from "utils/getImageUrl";
 
 export default function pageDetailDescription({ data }) {
   return (
     <main>
       <h4>About</h4>
-      {ReactHtmlParser(data.description)}
+      {parse(data.description)}
       <div className="row" style={{ marginTop: 30 }}>
         {data.featureId.length === 0
           ? null
@@ -18,7 +19,7 @@ export default function pageDetailDescription({ data }) {
                 >
                   <img
                     width="38"
-                    src={feature.imageUrl}
+                    src={getImageUrl(feature.imageUrl)}
                     alt={feature.name}
                     className="d-block mb-2"
                   />{" "}

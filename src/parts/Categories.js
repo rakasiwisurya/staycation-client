@@ -1,6 +1,7 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 import Button from "elements/Button";
+import getImageUrl from "utils/getImageUrl";
 
 export default function Categories({ data }) {
   return data.map((category, index1) => {
@@ -26,8 +27,8 @@ export default function Categories({ data }) {
                     )}
                     <figure className="img-wrapper" style={{ height: 180 }}>
                       <img
-                        src={item.imageId[0].imageUrl}
-                        alt={item.imageId[0].imageUrl}
+                        src={getImageUrl(item.imageId[0].imageUrl)}
+                        alt={item.title}
                         className="img-cover"
                       />
                     </figure>

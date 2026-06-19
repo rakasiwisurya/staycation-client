@@ -1,6 +1,7 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 import Button from "elements/Button";
+import getImageUrl from "utils/getImageUrl";
 
 export default function Activities({ data }) {
   if (data.length === 0) return null;
@@ -20,8 +21,8 @@ export default function Activities({ data }) {
                   )}
                   <figure className="img-wrapper" style={{ height: 180 }}>
                     <img
-                      src={item.imageUrl}
-                      alt={item.imageUrl}
+                      src={getImageUrl(item.imageUrl)}
+                      alt={item.name}
                       className="img-cover"
                     />
                   </figure>

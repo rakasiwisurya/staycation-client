@@ -5,14 +5,14 @@ import "./index.scss";
 export default function Text(props) {
   const {
     value,
-    type,
-    placeholder,
+    type = "text",
+    placeholder = "Please type here...",
     name,
     prepend,
     append,
     outerClassName,
     inputClassName,
-    errorResponse,
+    errorResponse = "Please match the requested format.",
   } = props;
 
   const [HasError, setHasError] = useState(null);
@@ -72,13 +72,6 @@ export default function Text(props) {
     </div>
   );
 }
-
-Text.defaultProps = {
-  type: "text",
-  pattern: "",
-  placeholder: "Please type here...",
-  errorResponse: "Please match the requested format.",
-};
 
 Text.propTypes = {
   name: propTypes.string.isRequired,

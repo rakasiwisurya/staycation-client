@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Fade } from "react-awesome-reveal";
 import { connect } from "react-redux";
 
+import withRouter from "utils/withRouter";
 import Header from "parts/Header";
 import PageDetailTitle from "parts/PageDetailTitle";
 import FeaturedImage from "parts/FeaturedImage";
@@ -74,6 +75,6 @@ const mapStateToProps = (state) => ({
   page: state.page,
 });
 
-export default connect(mapStateToProps, { checkoutBooking, fetchPage })(
-  DetailsPage
+export default withRouter(
+  connect(mapStateToProps, { checkoutBooking, fetchPage })(DetailsPage)
 );

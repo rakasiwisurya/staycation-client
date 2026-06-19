@@ -5,7 +5,7 @@ import "./index.scss";
 export default function File(props) {
   const [fileName, setFileName] = useState("");
   const {
-    placeholder,
+    placeholder = "Browse a file...",
     name,
     accept,
     prepend,
@@ -59,14 +59,9 @@ export default function File(props) {
   );
 }
 
-Text.defaultProps = {
-  placeholder: "Browse a file...",
-};
-
-Text.propTypes = {
+File.propTypes = {
   name: propTypes.string.isRequired,
   accept: propTypes.string.isRequired,
-  value: propTypes.string.isRequired,
   onChange: propTypes.func.isRequired,
   prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
   append: propTypes.oneOfType([propTypes.number, propTypes.string]),

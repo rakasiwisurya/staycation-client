@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Fade } from "react-awesome-reveal";
 
+import withRouter from "utils/withRouter";
 import Header from "parts/Header";
 import Button from "elements/Button";
 import Stepper, {
@@ -247,4 +248,6 @@ const mapStateToProps = (state) => ({
   page: state.page,
 });
 
-export default connect(mapStateToProps, { submitBooking })(Checkout);
+export default withRouter(
+  connect(mapStateToProps, { submitBooking })(Checkout)
+);

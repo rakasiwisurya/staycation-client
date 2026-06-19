@@ -1,6 +1,7 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 import Button from "elements/Button";
+import getImageUrl from "utils/getImageUrl";
 
 export default function MostPicked(props) {
   return (
@@ -22,7 +23,7 @@ export default function MostPicked(props) {
                 </div>
                 <figure className="img-wrapper">
                   <img
-                    src={item.imageId[0].imageUrl}
+                    src={getImageUrl(item.imageId[0].imageUrl)}
                     alt={item.title}
                     className="img-cover"
                   />

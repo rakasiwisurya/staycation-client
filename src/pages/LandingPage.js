@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import withRouter from "utils/withRouter";
 import Header from "parts/Header";
 import Hero from "parts/Hero";
 import MostPicked from "parts/MostPicked";
@@ -51,4 +52,4 @@ const mapStateToProps = (state) => ({
   page: state.page,
 });
 
-export default connect(mapStateToProps, { fetchPage })(LandingPage);
+export default withRouter(connect(mapStateToProps, { fetchPage })(LandingPage));

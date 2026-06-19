@@ -1,5 +1,6 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
+import getImageUrl from "utils/getImageUrl";
 import TestimonyAccent from "assets/images/testimonial-landingpages-frame.jpg";
 import Star from "elements/Star";
 import Button from "elements/Button";
@@ -15,7 +16,7 @@ export default function Testimony({ data }) {
               style={{ margin: `30px 0 0 30px` }}
             >
               <img
-                src={data.imageUrl}
+                src={getImageUrl(data.imageUrl)}
                 alt="Testimonial"
                 className="position-absolute"
                 style={{ zIndex: 1 }}
