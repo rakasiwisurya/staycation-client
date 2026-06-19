@@ -4,6 +4,10 @@
   command = "npm run build"
   publish = "dist"
 
+# Vite 6 requires Node >= 18; Netlify still defaults to Node 16 for older sites.
+[build.environment]
+  NODE_VERSION = "20"
+
 # SPA fallback so client-side routes (e.g. /properties/:id) resolve to index.html.
 [[redirects]]
   from = "/*"
