@@ -3,8 +3,16 @@ import propTypes from "prop-types";
 import "./index.scss";
 
 export default function Number(props) {
-  const { value, placeholder, name, min, max, prefix, suffix, isSuffixPlural } =
-    props;
+  const {
+    value,
+    placeholder,
+    name,
+    min = 1,
+    max = 1,
+    prefix = "",
+    suffix = "",
+    isSuffixPlural,
+  } = props;
 
   const onChange = (e) => {
     let value = String(e.target.value);
@@ -68,13 +76,6 @@ export default function Number(props) {
     </div>
   );
 }
-
-Number.defaultProps = {
-  min: 1,
-  max: 1,
-  prefix: "",
-  suffix: "",
-};
 
 Number.propTypes = {
   value: propTypes.oneOfType([propTypes.string, propTypes.number]),

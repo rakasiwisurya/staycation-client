@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Staycation — Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React single-page app (Vite) for browsing and booking staycations. Talks to the
+Staycation server API.
 
-## Available Scripts
+The codebase is **environment-driven**: the same code runs locally and in
+production — only environment variables change between the `main` (local) and
+`production` (cloud / Netlify) branches.
 
-In the project directory, you can run:
+## Stack
 
-### `npm start`
+- React 18 + Vite
+- Redux Toolkit + React-Redux
+- React Router 6
+- Sass (Dart Sass), axios
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting started (local)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+npm install
+cp .env.example .env      # then edit VITE_API_HOST if needed
+npm run dev               # Vite dev server, http://localhost:5173
+```
 
-### `npm test`
+Make sure the [server](../staycation-server) is running (default
+`http://localhost:4000`) and seeded.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Environment variables
 
-### `npm run build`
+Vite only exposes variables prefixed with `VITE_`. See
+[.env.example](.env.example).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Variable          | Local                                  | Production                                        |
+| ----------------- | -------------------------------------- | ------------------------------------------------- |
+| `VITE_API_HOST`   | `http://localhost:4000/api/v1/member`  | `https://<app>.onrender.com/api/v1/member`        |
+| `VITE_IMAGE_HOST` | _(optional; defaults to API origin)_   | usually unset (Cloudinary URLs are absolute)      |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Image URLs are resolved through `utils/getImageUrl`: absolute URLs (Cloudinary,
+in production) are used as-is; relative paths (local disk storage) are prefixed
+with the asset host.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Scripts
 
-### `npm run eject`
+| Script          | Description                          |
+| --------------- | ----------------------------------- |
+| `npm run dev`   | Start the Vite dev server           |
+| `npm run build` | Production build into `dist/`        |
+| `npm run preview` | Serve the production build locally |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Deployment (Netlify — production branch)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[netlify.toml](netlify.toml) sets the build command, publish directory (`dist`),
+and the SPA redirect. Set `VITE_API_HOST` in the Netlify dashboard
+(Site settings → Environment variables) to the Render API URL.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Project layout
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+src/
+  configs/axios   axios instance (reads VITE_API_HOST)
+  elements/       reusable UI (Button, Form inputs, Stepper, …)
+  pages/          route components (Landing, Details, Checkout, NotFound)
+  parts/          page sections (Hero, MostPicked, Categories, …)
+  store/          Redux Toolkit store, actions, reducers
+  utils/          getImageUrl, withRouter (router-v6 bridge), formatters
+  assets/scss/    styles (Bootstrap 4 base + custom)
+```

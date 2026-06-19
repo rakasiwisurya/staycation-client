@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import withRouter from "utils/withRouter";
 import propTypes from "prop-types";
 import Button from "elements/Button";
 import { InputNumber, InputDate } from "elements/Form";

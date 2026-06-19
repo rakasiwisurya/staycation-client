@@ -1,0 +1,11 @@
+# Netlify configuration for the Staycation client (production branch).
+# Set VITE_API_HOST in the Netlify dashboard (Site settings → Environment).
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA fallback so client-side routes (e.g. /properties/:id) resolve to index.html.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
